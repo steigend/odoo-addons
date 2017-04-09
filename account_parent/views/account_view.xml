@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <data>
+	
+<record id="view_account_withparent_list" model="ir.ui.view">
+        <field name="name">account.account.list</field>
+        <field name="model">account.account</field>
+        <field name="inherit_id" ref="account.view_account_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="replace">
+                <tree
+            decoration-bf="balance != 0"
+            zdecoration-info="(balance == 0 and (debit != 0 or credit != 0)) or reconcile == True"
+            decoration-warning="reconcile == True"
+            decoration-primary="internal_type == 'view'"
+            decoration-muted="deprecated == True"
+            decoration-danger="internal_type in ['receivable','payable']"
+            decoration-success="internal_type == 'liquidity'"
+            string="Chart of accounts" toolbar="1">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="user_type_id"/>
+                    <field name="currency_id" options="{'no_create': True}" groups="base.group_multi_currency"/>
+                    <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    <field name="internal_type"/>
+                    <field name="credit" />
+                    <field name="debit" />
+                    <field name="balance" />
+                    <field name="deprecated" invisible="1"/>
+                    <field name="reconcile" invisible="1"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
 
 	<record id="view_account_withparent_form" model="ir.ui.view">
         <field name="name">account.account.form</field>
