@@ -25,7 +25,7 @@ This module will be very useful for those who are still using v7/v8 because of t
     'author': 'Steigend IT Solutions, Odoo Community Association (OCA)',
     'website': 'http://www.steigendit.com',
     'category': 'Accounting &amp; Finance',
-    'version': '1.2.1',
+    'version': '10.0.2.1',
     'depends': ['account'],
     'data': [
         'security/account_parent_security.xml',
