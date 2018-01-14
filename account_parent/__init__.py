@@ -6,5 +6,5 @@
 #    For more details, check COPYRIGHT and LICENSE files
 #
 ##############################################################################
-import models
-import wizard
+from . import models
+from . import wizard

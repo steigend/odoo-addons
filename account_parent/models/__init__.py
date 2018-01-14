@@ -6,5 +6,5 @@
 #    For more details, check COPYRIGHT and LICENSE files
 #
 ##############################################################################
-import account
-import chart_template
+from . import account
+from . import chart_template

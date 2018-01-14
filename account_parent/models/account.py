@@ -96,6 +96,22 @@ class AccountAccount(models.Model):
         if not context.get('show_parent_account',False):
             args += [('user_type_id.type', '!=', 'view')]
         return super(AccountAccount, self).search(args, offset, limit, order, count=count)
+
+    @api.multi
+    def action_open_account(self):        
+        self.ensure_one()
+        ctx = dict(self.env.context or {})
+        active_id = self.env.context.get('active_id', False) 
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Journal Entry Items',
+            'res_model': 'account.move.line',
+            'view_type': 'form',
+            'view_mode': 'tree,form',
+            'target': 'current',
+            'domain': [('account_id','child_of',[active_id])],
+            'context': ctx,
+        }
     
 class AccountJournal(models.Model):
     _inherit = "account.journal"
