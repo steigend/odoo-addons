@@ -22,10 +22,10 @@ This module will be very useful for those who are still using v7/v8 because of t
     Contact us for any need of customisation or chart of account migration from v7/v8 - v9/v10
     """,
 
-    'author': 'Steigend IT Solutions',
-    'website': 'http://www.steigendit.com',
+    'author': 'Steigend IT Solutions, Odoo Community Association (OCA), Codeware Computer Trading LLC',
+    'website': 'http://www.steigendit.com,http://www.codewareuae.com',
     'category': 'Accounting &amp; Finance',
-    'version': '1.2.1',
+    'version': '1.1.1',
     'depends': ['account'],
     'data': [
         'security/account_parent_security.xml',

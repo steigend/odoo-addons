@@ -6,4 +6,4 @@
 #    For more details, check COPYRIGHT and LICENSE files
 #
 ##############################################################################
-import account_chart
+from . import account_chart
